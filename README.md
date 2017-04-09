@@ -1,3 +1,10 @@
+# ORB-SLAM2 for drone usage
+
+This project, a fork of the below authors' work, is a step towards autonomous drone flight with obstacle recognition, etc.  It will, once completed, take in video and output coordinates of objects, facets, etc into a ZeroMQ queue for consumption elsewhere (flight control systems, navigation, video streaming, etc)
+
+## OS X builds
+See the osx branch
+
 # ORB-SLAM2
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
 
