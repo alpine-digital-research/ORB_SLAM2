@@ -9,8 +9,8 @@ ENDIF()
 
 MESSAGE("Build type: " ${ROS_BUILD_TYPE})
 
-set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native ")
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -O3 -march=native")
+set(CMAKE_C_FLAGS "${CMAKE_C_FLAGS}  -Wall  -O3 -march=native -I/usr/local/Cellar/boost/1.60.0_2/include/boost/tr1/tr1")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall  -O3 -march=native -I/usr/local/Cellar/boost/1.60.0_2/include/boost/tr1/tr1")
 
 # Check C++11 or C++0x support
 include(CheckCXXCompilerFlag)

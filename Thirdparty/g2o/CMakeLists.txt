@@ -11,8 +11,6 @@ IF(NOT CMAKE_BUILD_TYPE)
   SET(CMAKE_BUILD_TYPE Release)
 ENDIF()
 
-set(CUDA_USE_STATIC_CUDA_RUNTIME OFF)
-
 MESSAGE(STATUS "BUILD TYPE:" ${CMAKE_BUILD_TYPE})
 
 SET (G2O_LIB_TYPE SHARED)
@@ -56,8 +54,8 @@ IF(OPENMP_FOUND AND G2O_USE_OPENMP)
 ENDIF(OPENMP_FOUND AND G2O_USE_OPENMP)
 
 # Compiler specific options for gcc
-SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -march=native") 
-SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native") 
+SET(CMAKE_CXX_FLAGS_RELEASE "${CMAKE_CXX_FLAGS_RELEASE} -O3 -march=native -I/usr/local/Cellar/boost/1.60.0_2/include/boost/tr1/tr1") 
+SET(CMAKE_C_FLAGS_RELEASE "${CMAKE_C_FLAGS_RELEASE} -O3 -march=native -I/usr/local/Cellar/boost/1.60.0_2/include/boost/tr1/tr1") 
 
 # activate warnings !!!
 SET(g2o_C_FLAGS "${g2o_C_FLAGS} -Wall -W")
