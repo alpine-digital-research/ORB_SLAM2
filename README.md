@@ -1,5 +1,10 @@
+=======
+# ORB-SLAM2 for drone usage
+
+This project, a fork of the below authors' work, is a step towards autonomous drone flight with obstacle recognition, etc.  It will, once completed, take in video and output coordinates of objects, facets, etc into a ZeroMQ queue for consumption elsewhere (flight control systems, navigation, video streaming, etc)
+
 # Notes on this branch:
-It it intended for building on OS X, with Boost 1.60_2 installed using Homebrew.  The modifications from master are pretty simple.
+It it intended for building on OS X, with Boost 1.60_2 installed using Homebrew.  The modifications from master are pretty simple; just check the diffs.
 
 # ORB-SLAM2
 **Authors:** [Raul Mur-Artal](http://webdiis.unizar.es/~raulmur/), [Juan D. Tardos](http://webdiis.unizar.es/~jdtardos/), [J. M. M. Montiel](http://webdiis.unizar.es/~josemari/) and [Dorian Galvez-Lopez](http://doriangalvez.com/) ([DBoW2](https://github.com/dorian3d/DBoW2))
