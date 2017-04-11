@@ -44,13 +44,13 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    VideoCapture capture;
+    cv::VideoCapture capture;
     capture.open(argv[3]);
     if( !capture.isOpened() )
         return fprintf( stderr, "Could not initialize video (%s) capture\n",argv[3] ), -2;
 
     double timeBetweenFrames = 1/capture.get(CV_CAP_PROP_FPS);
-    int frameCount = int(capture.get(CV_CAP_PROP_FRAME_COUNT))
+    int frameCount = int(capture.get(CV_CAP_PROP_FRAME_COUNT));
 
     printf("Time between frames: $0.4d\n", timeBetweenFrames);
 
@@ -64,14 +64,14 @@ int main(int argc, char **argv)
         // Read image from file
         capture >> im;
 
-        if( !im )
+        if( im.empty() )
         {
             cerr << endl << "Done reading" << endl;
             break;
         }
 
         // Pass the image to the SLAM system
-        SLAM.TrackMonocular(im,tframe);
+        SLAM.TrackMonocular(im,timeBetweenFrames);
     }
 
     // Stop all threads
