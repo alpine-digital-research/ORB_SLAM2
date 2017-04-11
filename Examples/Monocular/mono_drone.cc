@@ -44,7 +44,7 @@ int main(int argc, char **argv)
         return 1;
     }
 
-    VideoCapture capture;
+    cv::VideoCapture capture;
     capture.open(argv[3]);
     if( !capture.isOpened() )
         return fprintf( stderr, "Could not initialize video (%s) capture\n",argv[3] ), -2;
