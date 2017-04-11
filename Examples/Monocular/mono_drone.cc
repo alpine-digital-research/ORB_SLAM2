@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     double timeBetweenFrames = 1/capture.get(CV_CAP_PROP_FPS);
     int frameCount = int(capture.get(CV_CAP_PROP_FRAME_COUNT));
 
-    printf("Time between frames: $0.4d\n", timeBetweenFrames);
+    printf("Time between frames: %0.4d\n", timeBetweenFrames);
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
     ORB_SLAM2::System SLAM(argv[1],argv[2], ORB_SLAM2::System::MONOCULAR,true);
