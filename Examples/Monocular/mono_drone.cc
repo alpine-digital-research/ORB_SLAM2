@@ -38,9 +38,9 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    if(argc != 4)
+    if(argc != 3)
     {
-        cerr << endl << "Usage: ./mono_tum path_to_vocabulary path_to_settings path_to_video" << endl;
+        cerr << endl << "Usage: ./mono_drone <path_to_vocabulary> <path_to_settings> <path_to_video>" << endl;
         return 1;
     }
 
@@ -49,13 +49,13 @@ int main(int argc, char **argv)
     if( !capture.isOpened() )
         return fprintf( stderr, "Could not initialize video (%s) capture\n",argv[3] ), -2;
 
-    double timeBetweenFrames = 1/capture.get(CV_CAP_PROP_FPS);
+    double timeBetweenFrames = capture.get(CV_CAP_PROP_FPS);
     int frameCount = int(capture.get(CV_CAP_PROP_FRAME_COUNT));
 
-    printf("Time between frames: %0.4d\n", timeBetweenFrames);
+    printf("Time between frames: %0.4d; frame count: %4d\n", timeBetweenFrames, frameCount);
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
-    ORB_SLAM2::System SLAM(argv[1],argv[2], ORB_SLAM2::System::MONOCULAR,true);
+    ORB_SLAM2::System SLAM(argv[1],argv[2], ORB_SLAM2::System::MONOCULAR, true);
 
     // Main loop
     cv::Mat im;
