@@ -38,7 +38,7 @@ using namespace std;
 
 int main(int argc, char **argv)
 {
-    if(argc != 3)
+    if(argc != 4)
     {
         cerr << endl << "Usage: ./mono_drone <path_to_vocabulary> <path_to_settings> <path_to_video>" << endl;
         return 1;
@@ -52,7 +52,7 @@ int main(int argc, char **argv)
     double timeBetweenFrames = capture.get(CV_CAP_PROP_FPS);
     int frameCount = int(capture.get(CV_CAP_PROP_FRAME_COUNT));
 
-    printf("Time between frames: %0.4d; frame count: %4d\n", timeBetweenFrames, frameCount);
+    printf("Time between frames: %0.4f; frame count: %4d\n", timeBetweenFrames, frameCount);
 
     // Create SLAM system. It initializes all system threads and gets ready to process frames.
     ORB_SLAM2::System SLAM(argv[1],argv[2], ORB_SLAM2::System::MONOCULAR, true);
