@@ -17,18 +17,20 @@
 * You should have received a copy of the GNU General Public License
 * along with ORB-SLAM2. If not, see <http://www.gnu.org/licenses/>.
 */
-
+/**
 #include <opencv2/imgproc.hpp>
 #include <opencv2/calib3d.hpp>
-#include <opencv2/video.hpp>
 #include <opencv2/highgui.hpp>
+*/
+
+#include <opencv2/video.hpp>
 
 #include<iostream>
 #include<algorithm>
 #include<fstream>
 #include<chrono>
 
-#include<opencv2/core/core.hpp>
+#include<opencv2/core.hpp>
 
 #include<System.h>
 #include <unistd.h>
