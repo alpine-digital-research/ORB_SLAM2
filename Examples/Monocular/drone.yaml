@@ -5,10 +5,44 @@
 #--------------------------------------------------------------------------------------------
 
 # Camera calibration and distortion parameters (OpenCV) 
-Camera.fx: 500.0000
-Camera.fy: 500.0000
-Camera.cx: 1920.00
-Camera.cy: 1080.00
+
+# 1080p (4x3 broken)
+#Camera.fx: 1558.4415
+#Camera.fy: 1095.2380
+#Camera.cx: 779.2207
+#Camera.cy: 548.5
+
+# 1080p (16x9)
+#Camera.fx: 1169.3057
+#Camera.fy: 1095.2380
+#Camera.cx: 584.6528
+#Camera.cy: 548.6190
+
+
+# 720p (16x9)
+#Camera.fx: 779.5371
+#Camera.fy: 731.6017
+#Camera.cx: 389.7685
+#Camera.cy: 365.8008
+
+# 480p (16x9)
+#Camera.fx: 389.7685
+#Camera.fy: 363.6363
+#Camera.cx: 320.0000
+#Camera.cy: 168.0000
+
+# 480p matched to Y
+#Camera.fx: 363.6363
+#Camera.fy: 363.6363
+#Camera.cx: 320.0000
+#Camera.cy: 168.0000
+
+# 480p matched to X
+Camera.fx: 470
+Camera.fy: 470
+Camera.cx: 320.000
+Camera.cy: 168.000
+
 
 Camera.k1: 0.0
 Camera.k2: 0.0
@@ -16,7 +50,7 @@ Camera.p1: 0.0
 Camera.p2: 0.0
 
 # Camera frames per second 
-Camera.fps: 29.97
+Camera.fps: 24
 
 # Color order of the images (0: BGR, 1: RGB. It is ignored if images are grayscale)
 Camera.RGB: 1
@@ -26,20 +60,20 @@ Camera.RGB: 1
 #--------------------------------------------------------------------------------------------
 
 # ORB Extractor: Number of features per image
-ORBextractor.nFeatures: 2000
+ORBextractor.nFeatures: 20000
 
 # ORB Extractor: Scale factor between levels in the scale pyramid 	
-ORBextractor.scaleFactor: 1.2
+ORBextractor.scaleFactor: 1.1
 
 # ORB Extractor: Number of levels in the scale pyramid	
-ORBextractor.nLevels: 8
+ORBextractor.nLevels: 15
 
 # ORB Extractor: Fast threshold
 # Image is divided in a grid. At each cell FAST are extracted imposing a minimum response.
 # Firstly we impose iniThFAST. If no corners are detected we impose a lower value minThFAST
 # You can lower these values if your images have low contrast			
-ORBextractor.iniThFAST: 20
-ORBextractor.minThFAST: 7
+ORBextractor.iniThFAST: 15
+ORBextractor.minThFAST: 1
 
 #--------------------------------------------------------------------------------------------
 # Viewer Parameters
